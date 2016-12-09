@@ -3,15 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>12/9morning | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="12/9morning">
-<meta property="og:url" content="http://yoursite.com/2016/12/09/12-9morning/index.html">
+  <meta name="description" content="研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。
+错误描述在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。
+错误原因总结
+imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的te">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2016-12-09T00:46:29.488Z">
+<meta property="og:description" content="研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。
+错误描述在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。
+错误原因总结
+imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的te">
+<meta property="og:updated_time" content="2016-12-09T06:23:01.799Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="12/9morning">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。
+错误描述在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。
+错误原因总结
+imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的te">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,33 +72,30 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-12-9morning" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/12/09/12-9morning/" class="article-date">
-  <time datetime="2016-12-09T00:46:29.000Z" itemprop="datePublished">2016-12-09</time>
+    <a href="/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/" class="article-date">
+  <time datetime="2016-12-09T06:07:02.320Z" itemprop="datePublished">2016-12-09</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      12/9morning
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。</p>
+<h1 id="错误描述"><a href="#错误描述" class="headerlink" title="错误描述"></a>错误描述</h1><p>在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。</p>
+<h1 id="错误原因总结"><a href="#错误原因总结" class="headerlink" title="错误原因总结"></a>错误原因总结</h1><ul>
+<li>imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的test.jpg图片，调用格式为：<code>imread(&quot;C:\\test.jpg&quot;);</code></li>
+<li>进行图片融合等操作时，图片的尺寸、通道数不匹配；</li>
+<li>对视频进行加片头等操作时，图片的尺寸与视频的帧宽帧长不匹配；</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/09/12-9morning/" data-id="ciwhepno7000084k4mrdwgkiz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/" data-id="ciwhepnok000484k4zt1rrgxm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -95,19 +104,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/12/09/markdownpractice/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/12/08/hi-there/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/12/09/markdownpractice/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">hi there?</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>
