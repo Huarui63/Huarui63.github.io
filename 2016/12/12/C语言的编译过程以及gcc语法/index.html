@@ -5,25 +5,25 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。
-错误描述在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。
-错误原因总结
-imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的te">
+  <meta name="description" content="由一个C源程序生成一个可执行文件要经过一下几个步骤：
+1. 编译预处理   这个步骤主要是对源代码中各种以“#”开头的指令进行处理。如#include``#define等宏定义、条件编译、头文件包含指令。
+2. 编译、优化  检查代码中的语法错误，并编译生成汇编文件(.s/.asm)
+3. 汇编   将汇编代码翻译成目标文件(.o/.a/.ko/.obj)，也就是二进制代码。目标文件一般包括代码段">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/12/12/C语言的编译过程以及gcc语法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。
-错误描述在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。
-错误原因总结
-imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的te">
-<meta property="og:updated_time" content="2016-12-09T06:23:01.799Z">
+<meta property="og:description" content="由一个C源程序生成一个可执行文件要经过一下几个步骤：
+1. 编译预处理   这个步骤主要是对源代码中各种以“#”开头的指令进行处理。如#include``#define等宏定义、条件编译、头文件包含指令。
+2. 编译、优化  检查代码中的语法错误，并编译生成汇编文件(.s/.asm)
+3. 汇编   将汇编代码翻译成目标文件(.o/.a/.ko/.obj)，也就是二进制代码。目标文件一般包括代码段">
+<meta property="og:updated_time" content="2016-12-12T04:09:13.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。
-错误描述在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。
-错误原因总结
-imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的te">
+<meta name="twitter:description" content="由一个C源程序生成一个可执行文件要经过一下几个步骤：
+1. 编译预处理   这个步骤主要是对源代码中各种以“#”开头的指令进行处理。如#include``#define等宏定义、条件编译、头文件包含指令。
+2. 编译、优化  检查代码中的语法错误，并编译生成汇编文件(.s/.asm)
+3. 汇编   将汇编代码翻译成目标文件(.o/.a/.ko/.obj)，也就是二进制代码。目标文件一般包括代码段">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -72,10 +72,10 @@ imread()的路径格式不对，需要对斜杠进行转义，比如要打开c�
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-C语言的编译过程以及gcc语法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/" class="article-date">
-  <time datetime="2016-12-09T06:07:02.320Z" itemprop="datePublished">2016-12-09</time>
+    <a href="/2016/12/12/C语言的编译过程以及gcc语法/" class="article-date">
+  <time datetime="2016-12-12T02:32:36.364Z" itemprop="datePublished">2016-12-12</time>
 </a>
     
   </div>
@@ -84,18 +84,26 @@ imread()的路径格式不对，需要对斜杠进行转义，比如要打开c�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。</p>
-<h1 id="错误描述"><a href="#错误描述" class="headerlink" title="错误描述"></a>错误描述</h1><p>在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。</p>
-<h1 id="错误原因总结"><a href="#错误原因总结" class="headerlink" title="错误原因总结"></a>错误原因总结</h1><ul>
-<li>imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的test.jpg图片，调用格式为：<code>imread(&quot;C:\\test.jpg&quot;);</code></li>
-<li>进行图片融合等操作时，图片的尺寸、通道数不匹配；</li>
-<li>对视频进行加片头等操作时，图片的尺寸与视频的帧宽帧长不匹配；</li>
+        <p>由一个C源程序生成一个可执行文件要经过一下几个步骤：</p>
+<h4 id="1-编译预处理"><a href="#1-编译预处理" class="headerlink" title="1. 编译预处理"></a>1. 编译预处理</h4><p>   这个步骤主要是对源代码中各种以“#”开头的指令进行处理。如<code>#include``#define</code>等宏定义、条件编译、头文件包含指令。</p>
+<h4 id="2-编译、优化"><a href="#2-编译、优化" class="headerlink" title="2. 编译、优化"></a>2. 编译、优化</h4><p>  检查代码中的语法错误，并编译生成汇编文件(.s/.asm)</p>
+<h4 id="3-汇编"><a href="#3-汇编" class="headerlink" title="3. 汇编"></a>3. 汇编</h4><p>   将汇编代码翻译成目标文件(.o/.a/.ko/.obj)，也就是二进制代码。目标文件一般包括代码段和数据段（存放全局变量等数据）</p>
+<h4 id="4-链接"><a href="#4-链接" class="headerlink" title="4. 链接"></a>4. 链接</h4><pre><code>将所有.o文件链接到一起，生成可执行文件(.exe)
+</code></pre><h2 id="GCC基本语法"><a href="#GCC基本语法" class="headerlink" title="GCC基本语法"></a>GCC基本语法</h2><ul>
+<li>gcc -c</li>
 </ul>
+<p>gcc 后面是操作对象，-c或者-o后面是输出文件的名字<br>-c means “just Compile,no Make”<br>只编译，不连接</p>
+<p>例子：<code>gcc test.c</code> 生成可执行文件a.out<br>      <code>gcc -c test.c</code>输出test.o文件</p>
+<ul>
+<li>gcc -o</li>
+</ul>
+<p>指定生成的输出文件</p>
+<p>例子：<code>gcc test.c -o test</code> 生成可执行文件test，-o后面是输出文件的名字</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/" data-id="ciwlkcokc000384k40lloq45u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/12/C语言的编译过程以及gcc语法/" data-id="ciwlkcok2000084k43jfb8vbt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -104,17 +112,8 @@ imread()的路径格式不对，需要对斜杠进行转义，比如要打开c�
     
 <nav id="article-nav">
   
-    <a href="/2016/12/12/C语言的编译过程以及gcc语法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/12/09/markdownpractice/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title"></div>
     </a>
