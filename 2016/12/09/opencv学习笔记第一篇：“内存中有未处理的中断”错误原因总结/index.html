@@ -5,25 +5,22 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。
-错误描述在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。
-错误原因总结
-imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的te">
+  <meta name="description" content="title:opencv学习笔记1：“内存中有未处理的中断”错误原因总结
+tags:opencv研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。
+错误描述在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。
-错误描述在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。
-错误原因总结
-imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的te">
-<meta property="og:updated_time" content="2016-12-09T06:23:01.799Z">
+<meta property="og:description" content="title:opencv学习笔记1：“内存中有未处理的中断”错误原因总结
+tags:opencv研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。
+错误描述在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理">
+<meta property="og:updated_time" content="2016-12-12T07:55:19.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。
-错误描述在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。
-错误原因总结
-imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的te">
+<meta name="twitter:description" content="title:opencv学习笔记1：“内存中有未处理的中断”错误原因总结
+tags:opencv研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。
+错误描述在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -61,9 +58,9 @@ imread()的路径格式不对，需要对斜杠进行转义，比如要打开c�
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -84,7 +81,9 @@ imread()的路径格式不对，需要对斜杠进行转义，比如要打开c�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。</p>
+        <hr>
+<p>title:opencv学习笔记1：“内存中有未处理的中断”错误原因总结</p>
+<h2 id="tags-opencv"><a href="#tags-opencv" class="headerlink" title="tags:opencv"></a>tags:opencv</h2><p>研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。</p>
 <h1 id="错误描述"><a href="#错误描述" class="headerlink" title="错误描述"></a>错误描述</h1><p>在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。</p>
 <h1 id="错误原因总结"><a href="#错误原因总结" class="headerlink" title="错误原因总结"></a>错误原因总结</h1><ul>
 <li>imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的test.jpg图片，调用格式为：<code>imread(&quot;C:\\test.jpg&quot;);</code></li>
@@ -95,7 +94,7 @@ imread()的路径格式不对，需要对斜杠进行转义，比如要打开c�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/" data-id="ciwlrr5mk0003u4k4qa68q7pw" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/" data-id="ciwlsc9ge00014ck4n8j7sv56" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -105,7 +104,7 @@ imread()的路径格式不对，需要对斜杠进行转义，比如要打开c�
 <nav id="article-nav">
   
     <a href="/2016/12/12/C语言的编译过程以及gcc语法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Nieuwer</strong>
+      <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
           (no title)
@@ -115,7 +114,7 @@ imread()的路径格式不对，需要对斜杠进行转义，比如要打开c�
   
   
     <a href="/2016/12/09/markdownpractice/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ouder</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title"></div>
     </a>
   
@@ -138,7 +137,7 @@ imread()的路径格式不对，需要对斜杠进行转义，比如要打开c�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
     </div>
@@ -148,7 +147,7 @@ imread()的路径格式不对，需要对斜杠进行转义，比如要打开c�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -181,7 +180,7 @@ imread()的路径格式不对，需要对斜杠进行转义，比如要打开c�
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

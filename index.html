@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -73,12 +73,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>由一个C源程序生成一个可执行文件要经过一下几个步骤：</p>
+        <hr>
+<p>title:C语言的编译过程以及gcc语法</p>
+<h2 id="tags-C"><a href="#tags-C" class="headerlink" title="tags:C"></a>tags:C</h2><p>由一个C源程序生成一个可执行文件要经过一下几个步骤：</p>
 <h4 id="1-编译预处理"><a href="#1-编译预处理" class="headerlink" title="1. 编译预处理"></a>1. 编译预处理</h4><p>   这个步骤主要是对源代码中各种以“#”开头的指令进行处理。如<code>#include``#define</code>等宏定义、条件编译、头文件包含指令。</p>
 <h4 id="2-编译、优化"><a href="#2-编译、优化" class="headerlink" title="2. 编译、优化"></a>2. 编译、优化</h4><p>  检查代码中的语法错误，并编译生成汇编文件(.s/.asm)</p>
 <h4 id="3-汇编"><a href="#3-汇编" class="headerlink" title="3. 汇编"></a>3. 汇编</h4><p>   将汇编代码翻译成目标文件(.o/.a/.ko/.obj)，也就是二进制代码。目标文件一般包括代码段和数据段（存放全局变量等数据）</p>
-<h4 id="4-链接"><a href="#4-链接" class="headerlink" title="4. 链接"></a>4. 链接</h4><pre><code>将所有.o文件链接到一起，生成可执行文件(.exe)
-</code></pre><h2 id="GCC基本语法"><a href="#GCC基本语法" class="headerlink" title="GCC基本语法"></a>GCC基本语法</h2><ul>
+<h4 id="4-链接"><a href="#4-链接" class="headerlink" title="4. 链接"></a>4. 链接</h4><p>将所有.o文件链接到一起，生成可执行文件(.exe)</p>
+<h2 id="GCC基本语法"><a href="#GCC基本语法" class="headerlink" title="GCC基本语法"></a>GCC基本语法</h2><ul>
 <li>gcc -c</li>
 </ul>
 <p>gcc 后面是操作对象，-c或者-o后面是输出文件的名字<br>-c means “just Compile,no Make”<br>只编译，不连接</p>
@@ -92,7 +94,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/12/C语言的编译过程以及gcc语法/" data-id="ciwlrr5ma0000u4k4ormv36gn" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/12/12/C语言的编译过程以及gcc语法/" data-id="ciwlsc9gg00024ck4ue9cu5y3" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -114,7 +116,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。</p>
+        <hr>
+<p>title:opencv学习笔记1：“内存中有未处理的中断”错误原因总结</p>
+<h2 id="tags-opencv"><a href="#tags-opencv" class="headerlink" title="tags:opencv"></a>tags:opencv</h2><p>研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。</p>
 <h1 id="错误描述"><a href="#错误描述" class="headerlink" title="错误描述"></a>错误描述</h1><p>在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。</p>
 <h1 id="错误原因总结"><a href="#错误原因总结" class="headerlink" title="错误原因总结"></a>错误原因总结</h1><ul>
 <li>imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的test.jpg图片，调用格式为：<code>imread(&quot;C:\\test.jpg&quot;);</code></li>
@@ -125,7 +129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/" data-id="ciwlrr5mk0003u4k4qa68q7pw" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/" data-id="ciwlsc9ge00014ck4n8j7sv56" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -171,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/09/markdownpractice/" data-id="ciwlrr5mi0002u4k43rrwzznt" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/12/09/markdownpractice/" data-id="ciwlsc9gj00034ck4vk49c58b" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -216,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/08/hello-world/" data-id="ciwlrr5mg0001u4k472o7jbo7" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/12/08/hello-world/" data-id="ciwlsc9g800004ck42lte7o94" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -241,7 +245,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
     </div>
@@ -251,7 +255,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -284,7 +288,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
