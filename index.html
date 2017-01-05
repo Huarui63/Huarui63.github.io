@@ -495,7 +495,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/12/C语言的编译过程以及gcc语法/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/12/opencv学习笔记1：“内存中有未处理的中断”错误原因总结/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Huarui Zhang">
@@ -520,8 +520,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/12/C语言的编译过程以及gcc语法/" itemprop="url">
-                  未命名
+                <a class="post-title-link" href="/2016/12/12/opencv学习笔记1：“内存中有未处理的中断”错误原因总结/" itemprop="url">
+                  opencv学习笔记1：“内存中有未处理的中断”错误原因总结
                 </a>
               
             
@@ -537,7 +537,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-12T10:32:36+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-12T15:55:26+08:00">
                 2016-12-12
               </time>
             
@@ -575,23 +575,13 @@
       
         
           
-            <hr>
-<p>title:C语言的编译过程以及gcc语法</p>
-<h2 id="tags-C"><a href="#tags-C" class="headerlink" title="tags:C"></a>tags:C</h2><p>由一个C源程序生成一个可执行文件要经过一下几个步骤：</p>
-<h4 id="1-编译预处理"><a href="#1-编译预处理" class="headerlink" title="1. 编译预处理"></a>1. 编译预处理</h4><p>   这个步骤主要是对源代码中各种以“#”开头的指令进行处理。如<code>#include``#define</code>等宏定义、条件编译、头文件包含指令。</p>
-<h4 id="2-编译、优化"><a href="#2-编译、优化" class="headerlink" title="2. 编译、优化"></a>2. 编译、优化</h4><p>  检查代码中的语法错误，并编译生成汇编文件(.s/.asm)</p>
-<h4 id="3-汇编"><a href="#3-汇编" class="headerlink" title="3. 汇编"></a>3. 汇编</h4><p>   将汇编代码翻译成目标文件(.o/.a/.ko/.obj)，也就是二进制代码。目标文件一般包括代码段和数据段（存放全局变量等数据）</p>
-<h4 id="4-链接"><a href="#4-链接" class="headerlink" title="4. 链接"></a>4. 链接</h4><p>将所有.o文件链接到一起，生成可执行文件(.exe)</p>
-<h2 id="GCC基本语法"><a href="#GCC基本语法" class="headerlink" title="GCC基本语法"></a>GCC基本语法</h2><ul>
-<li>gcc -c</li>
+            <p>研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。</p>
+<h1 id="错误描述"><a href="#错误描述" class="headerlink" title="错误描述"></a>错误描述</h1><p>在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。</p>
+<h1 id="错误原因总结"><a href="#错误原因总结" class="headerlink" title="错误原因总结"></a>错误原因总结</h1><ul>
+<li>imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的test.jpg图片，调用格式为：<code>imread(&quot;C:\\test.jpg&quot;);</code></li>
+<li>进行图片融合等操作时，图片的尺寸、通道数不匹配；</li>
+<li>对视频进行加片头等操作时，图片的尺寸与视频的帧宽帧长不匹配；</li>
 </ul>
-<p>gcc 后面是操作对象，-c或者-o后面是输出文件的名字<br>-c means “just Compile,no Make”<br>只编译，不连接</p>
-<p>例子：<code>gcc test.c</code> 生成可执行文件a.out<br>      <code>gcc -c test.c</code>输出test.o文件</p>
-<ul>
-<li>gcc -o</li>
-</ul>
-<p>指定生成的输出文件</p>
-<p>例子：<code>gcc test.c -o test</code> 生成可执行文件test，-o后面是输出文件的名字</p>
 
           
         
@@ -630,7 +620,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/12/C语言的编译过程以及gcc语法/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Huarui Zhang">
@@ -655,8 +645,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/09/opencv学习笔记第一篇：“内存中有未处理的中断”错误原因总结/" itemprop="url">
-                  未命名
+                <a class="post-title-link" href="/2016/12/12/C语言的编译过程以及gcc语法/" itemprop="url">
+                  C语言的编译过程以及gcc语法
                 </a>
               
             
@@ -672,8 +662,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-09T14:07:02+08:00">
-                2016-12-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-12T15:54:26+08:00">
+                2016-12-12
               </time>
             
 
@@ -710,15 +700,21 @@
       
         
           
-            <hr>
-<p>title:opencv学习笔记1：“内存中有未处理的中断”错误原因总结</p>
-<h2 id="tags-opencv"><a href="#tags-opencv" class="headerlink" title="tags:opencv"></a>tags:opencv</h2><p>研一冬学期选修了《计算机视觉》，为了完成课程作业，开始学习使用opencv。我用的版本是2.4.9，编译软件使用的Visual Studio2012，环境的配置主要参考CSDN浅墨的博客，不再赘述。</p>
-<h1 id="错误描述"><a href="#错误描述" class="headerlink" title="错误描述"></a>错误描述</h1><p>在生成本地解决方案的时候，编译出现错误，弹出对话框，意思是：在内存中的某个位置，出现了未被处理的中断。</p>
-<h1 id="错误原因总结"><a href="#错误原因总结" class="headerlink" title="错误原因总结"></a>错误原因总结</h1><ul>
-<li>imread()的路径格式不对，需要对斜杠进行转义，比如要打开c盘下的test.jpg图片，调用格式为：<code>imread(&quot;C:\\test.jpg&quot;);</code></li>
-<li>进行图片融合等操作时，图片的尺寸、通道数不匹配；</li>
-<li>对视频进行加片头等操作时，图片的尺寸与视频的帧宽帧长不匹配；</li>
+            <p>由一个C源程序生成一个可执行文件要经过一下几个步骤：</p>
+<h4 id="1-编译预处理"><a href="#1-编译预处理" class="headerlink" title="1. 编译预处理"></a>1. 编译预处理</h4><p>   这个步骤主要是对源代码中各种以“#”开头的指令进行处理。如<code>#include``#define</code>等宏定义、条件编译、头文件包含指令。</p>
+<h4 id="2-编译、优化"><a href="#2-编译、优化" class="headerlink" title="2. 编译、优化"></a>2. 编译、优化</h4><p>  检查代码中的语法错误，并编译生成汇编文件(.s/.asm)</p>
+<h4 id="3-汇编"><a href="#3-汇编" class="headerlink" title="3. 汇编"></a>3. 汇编</h4><p>   将汇编代码翻译成目标文件(.o/.a/.ko/.obj)，也就是二进制代码。目标文件一般包括代码段和数据段（存放全局变量等数据）</p>
+<h4 id="4-链接"><a href="#4-链接" class="headerlink" title="4. 链接"></a>4. 链接</h4><p>将所有.o文件链接到一起，生成可执行文件(.exe)</p>
+<h2 id="GCC基本语法"><a href="#GCC基本语法" class="headerlink" title="GCC基本语法"></a>GCC基本语法</h2><ul>
+<li>gcc -c</li>
 </ul>
+<p>gcc 后面是操作对象，-c或者-o后面是输出文件的名字<br>-c means “just Compile,no Make”<br>只编译，不连接</p>
+<p>例子：<code>gcc test.c</code> 生成可执行文件a.out<br>      <code>gcc -c test.c</code>输出test.o文件</p>
+<ul>
+<li>gcc -o</li>
+</ul>
+<p>指定生成的输出文件</p>
+<p>例子：<code>gcc test.c -o test</code> 生成可执行文件test，-o后面是输出文件的名字</p>
 
           
         
@@ -802,7 +798,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
