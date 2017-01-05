@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="C," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,25 +84,28 @@
 
 
 
-<meta name="description" content="由一个C源程序生成一个可执行文件要经过一下几个步骤：
+<meta name="description" content="title:C语言的编译过程以及gcc语法
+tags:C由一个C源程序生成一个可执行文件要经过一下几个步骤：
 1. 编译预处理   这个步骤主要是对源代码中各种以“#”开头的指令进行处理。如#include``#define等宏定义、条件编译、头文件包含指令。
 2. 编译、优化  检查代码中的语法错误，并编译生成汇编文件(.s/.asm)
-3. 汇编   将汇编代码翻译成目标文件(.o/.a/.ko/.obj)，也就是二进制代码。目标文件一般包括代码段">
+3. 汇编   将汇编代码翻译成目标文件(.o/.a/.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言的编译过程以及gcc语法">
+<meta property="og:title" content="Huarui's Blog">
 <meta property="og:url" content="http://yoursite.com/2016/12/12/C语言的编译过程以及gcc语法/index.html">
 <meta property="og:site_name" content="Huarui's Blog">
-<meta property="og:description" content="由一个C源程序生成一个可执行文件要经过一下几个步骤：
+<meta property="og:description" content="title:C语言的编译过程以及gcc语法
+tags:C由一个C源程序生成一个可执行文件要经过一下几个步骤：
 1. 编译预处理   这个步骤主要是对源代码中各种以“#”开头的指令进行处理。如#include``#define等宏定义、条件编译、头文件包含指令。
 2. 编译、优化  检查代码中的语法错误，并编译生成汇编文件(.s/.asm)
-3. 汇编   将汇编代码翻译成目标文件(.o/.a/.ko/.obj)，也就是二进制代码。目标文件一般包括代码段">
-<meta property="og:updated_time" content="2017-01-05T01:32:10.536Z">
+3. 汇编   将汇编代码翻译成目标文件(.o/.a/.">
+<meta property="og:updated_time" content="2016-12-12T07:54:15.459Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C语言的编译过程以及gcc语法">
-<meta name="twitter:description" content="由一个C源程序生成一个可执行文件要经过一下几个步骤：
+<meta name="twitter:title" content="Huarui's Blog">
+<meta name="twitter:description" content="title:C语言的编译过程以及gcc语法
+tags:C由一个C源程序生成一个可执行文件要经过一下几个步骤：
 1. 编译预处理   这个步骤主要是对源代码中各种以“#”开头的指令进行处理。如#include``#define等宏定义、条件编译、头文件包含指令。
 2. 编译、优化  检查代码中的语法错误，并编译生成汇编文件(.s/.asm)
-3. 汇编   将汇编代码翻译成目标文件(.o/.a/.ko/.obj)，也就是二进制代码。目标文件一般包括代码段">
+3. 汇编   将汇编代码翻译成目标文件(.o/.a/.">
 
 
 
@@ -136,7 +139,7 @@
 
 
 
-  <title> C语言的编译过程以及gcc语法 | Huarui's Blog </title>
+  <title>  | Huarui's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +276,7 @@
             
             
               
-                C语言的编译过程以及gcc语法
+                
               
             
           </h1>
@@ -288,7 +291,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-12T15:54:26+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-12T10:32:36+08:00">
                 2016-12-12
               </time>
             
@@ -324,7 +327,9 @@
       
 
       
-        <p>由一个C源程序生成一个可执行文件要经过一下几个步骤：</p>
+        <hr>
+<p>title:C语言的编译过程以及gcc语法</p>
+<h2 id="tags-C"><a href="#tags-C" class="headerlink" title="tags:C"></a>tags:C</h2><p>由一个C源程序生成一个可执行文件要经过一下几个步骤：</p>
 <h4 id="1-编译预处理"><a href="#1-编译预处理" class="headerlink" title="1. 编译预处理"></a>1. 编译预处理</h4><p>   这个步骤主要是对源代码中各种以“#”开头的指令进行处理。如<code>#include``#define</code>等宏定义、条件编译、头文件包含指令。</p>
 <h4 id="2-编译、优化"><a href="#2-编译、优化" class="headerlink" title="2. 编译、优化"></a>2. 编译、优化</h4><p>  检查代码中的语法错误，并编译生成汇编文件(.s/.asm)</p>
 <h4 id="3-汇编"><a href="#3-汇编" class="headerlink" title="3. 汇编"></a>3. 汇编</h4><p>   将汇编代码翻译成目标文件(.o/.a/.ko/.obj)，也就是二进制代码。目标文件一般包括代码段和数据段（存放全局变量等数据）</p>
@@ -359,12 +364,6 @@
 
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/C/" rel="tag"># C</a>
-          
-        </div>
       
 
       
@@ -449,7 +448,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -460,7 +459,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -495,7 +494,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-编译预处理"><span class="nav-number">1.</span> <span class="nav-text">1. 编译预处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-编译、优化"><span class="nav-number">2.</span> <span class="nav-text">2. 编译、优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-汇编"><span class="nav-number">3.</span> <span class="nav-text">3. 汇编</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-链接"><span class="nav-number">4.</span> <span class="nav-text">4. 链接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GCC基本语法"><span class="nav-number"></span> <span class="nav-text">GCC基本语法</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-C"><span class="nav-number">1.</span> <span class="nav-text">tags:C</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-编译预处理"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 编译预处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-编译、优化"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 编译、优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-汇编"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. 汇编</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-链接"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. 链接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GCC基本语法"><span class="nav-number">2.</span> <span class="nav-text">GCC基本语法</span></a></li></ol></div>
             
 
           </div>
