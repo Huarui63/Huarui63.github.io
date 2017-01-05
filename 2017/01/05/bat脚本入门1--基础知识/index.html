@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Huarui's Blog">
 <meta property="og:description" content="问题描述今天在uzhou的带领下，尝试用批处理脚本解决“使用有道云笔记编辑md文件，每次都要重复进行另存为操作”的问题。
 我的理解之前接触的脚本语言有shell，还有最近开始学习的python。其实DOS批处理脚本语言我想所有学习计算机的人多多少少都接触过：在开始菜单输入cmd，打开一个DOS命令行窗口，事实上，在这个窗口下输入的命令都是bat脚本。只不过对它的理解太局限了，没有意识到其实自己就是">
-<meta property="og:updated_time" content="2017-01-05T10:28:58.835Z">
+<meta property="og:updated_time" content="2017-01-05T10:56:31.100Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bat脚本入门1--基础知识">
 <meta name="twitter:description" content="问题描述今天在uzhou的带领下，尝试用批处理脚本解决“使用有道云笔记编辑md文件，每次都要重复进行另存为操作”的问题。
@@ -325,7 +325,7 @@
 set /p var=input the file name you want to update:
 for /r D:\BLOG\youdaoyunNOTE\18202789862@163.com %%i in (%var%.md) do if exist %%i copy %%i D:\BLOG\hexo\source\_posts
 pause</code></p>
-<p><del>oops!！it seems that my email is expose.You can contact me if you want!</del></p>
+<p><del>oops!！it seems that my email is exposed.You can contact me if you want!</del></p>
 <h5 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h5><p>期间出现了不能复制的问题，原因是没有进到相应的路径（D:\…）下面，仍然在默认路径（桌面）下。</p>
 
       
